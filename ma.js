@@ -16,11 +16,19 @@ app.get('/', (req, res) => {     // recebendo dados
   
 
     let json = {temperatura: temperaturaGraus}; // padrao json 
+    
+     
 
     res.json(json);
 });
 
 app.listen(8080 , () => {
     let data = new Date();
-    console.log( `Servidor node iniciado em: ${data}`);
+    let ano = data.getFullYear();
+    let mes = data.getMonth();
+    let dia = data.getDay();
+    let hora = data.getHours();
+    let min = data.getMinutes();
+    let sec = data.getSeconds();
+    console.log( `Servidor node iniciado em: ${dia}/${mes}/${ano} as ${hora}hrs:${min}min:${sec}seg`);
 })
